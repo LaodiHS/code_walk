@@ -49,17 +49,12 @@ const { write_file } = require("./lib/write_to_file.js");
   );
 
 
-   // <link rel="stylesheet" href="public/styles.css"></link>
-
-
-
-  //  <script type="text/javascript" src=" public/scripts.js">
-            //   <script>
-  //${scripts}
-
-       //       <script src="static/socket.io-client/dist/socket.io.js"></script>
-  // ${styles}
-
+// <link rel="stylesheet" href="public/styles.css"></link>
+// <script type="text/javascript" src=" public/scripts.js">
+// <script>
+// ${scripts}
+// <script src="static/socket.io-client/dist/socket.io.js"></script>
+// ${styles}
 // styles
 
 
