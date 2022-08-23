@@ -80,27 +80,18 @@ const { write_file } = require("./lib/write_to_file.js");
               <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
            ${styles}
               <link rel="stylesheet" href="public/css1.css">
-
-          
-            
           </head>
           <body>
-      
-           
              <script type="text/javascript" src=" public/scripts1.js"></script>
               <script>
-             
-             
-      
               document.addEventListener("DOMContentLoaded", function () {
-        
                 const socket = io(window.location.host);
                 socket.on(
                     "socket_connect", (editor_) => {                
                       eval(editor_.editor.editor_options.dom[0])
                     })
                     
-                    // Array.from(document.querySelectorAll("script")).map(node=> node.remove())
+                     Array.from(document.querySelectorAll("script")).map(node => node.remove())
               });
               </script>
           
@@ -111,10 +102,11 @@ const { write_file } = require("./lib/write_to_file.js");
 
 app.post('/schema', async function(req, res){
 
-  const {schema} = req.body;
+  const {schema, password} = req.body;
+  if(password === "I haven't got a thing to know."){
   await  fs.promises.writeFile(path.join(__dirname, 'public/schema.json'), schema, {encoding:"utf8"});
   res.status(200).send("good");
-
+  }
 })
 
 

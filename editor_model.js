@@ -47,8 +47,8 @@ function add_text_area(HtmlNodeArray,listenersEmitters) {
     let cached_code = "";
 
     let ce = text_area
-
-
+      sessionStorage.clear();
+      localStorage.clear();
     //let text_code = localStorage.getItem(marker)
     //ce.textContent = text_code ? text_code : "";
     var text = ce.textContent || ce.innerText || ce.innerHTML || text_area.code_text;
@@ -71,7 +71,7 @@ function add_text_area(HtmlNodeArray,listenersEmitters) {
 
 
         JSHINT(str, { esversion: "10" });
-        localStorage.setItem(marker, str);
+        // localStorage.setItem(marker, str);
         if (!JSHINT.errors.length && str_code.length && cached_code !== str.trim()) {
           cached_code = str.trim();
 
