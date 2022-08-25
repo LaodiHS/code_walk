@@ -177,8 +177,8 @@ class Editor_Model {
             let x = 0;
             let m = 10;
             let y = 1;
-            const w = 3;
-            const h = 7;
+            const w = 4;
+            const h = 8;
             let c = 0;
 
           const response = axios.get("/public/schema.json").then(data=> data.data)
@@ -186,11 +186,11 @@ class Editor_Model {
        
           for(const file_name in result){  
            if(c % 2 ===0){
-             y += 8
+             y += 10
            } 
 
             let str =  result[file_name]
-            children.push({x : x, y : y, w : 3 , h : 8, content: '<div class="editor"><label class="file_label" >'+ file_name +'</label><div class="textArea">'+ result[file_name] +'</div><div class="select-theme"></div></div>' })
+            children.push({x : x, y : y, w : 4 , h : 9, content: '<div class="editor"><label class="file_label" >'+ file_name +'</label><div class="textArea">'+ result[file_name] +'</div><div class="select-theme"></div></div>' })
         
             c++;
             x =  x ===  5 ? 0 : 5
@@ -198,12 +198,15 @@ class Editor_Model {
           }
      
             let options = { // main grid options
-              cellHeight: 50,
+             cellHeight: 50,
               margin: 5,
               minRow: 5, // don't collapse when empty
               acceptWidgets: true,
               id: 'main',
-              children: children  
+              children: children  ,
+           
+              animate: true, // show immediate (animate: true is nice for user dragging though)
+
             };
                                       
             let grid = GridStack.addGrid(document.querySelector("body"), options);
@@ -221,6 +224,10 @@ class Editor_Model {
           start_grid();
 
 ${add_text_area}
+
+
+
+
           `,
       ],
     };
