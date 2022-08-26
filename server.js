@@ -1,7 +1,7 @@
-const { GenerateDomResources } = require("./lib/nodeModuleFileResource.js");
+// const { GenerateDomResources } = require("./lib/nodeModuleFileResource.js");
 const fs = require("fs")
 
-let script_and_style_dependencies = new GenerateDomResources();
+// let script_and_style_dependencies = new GenerateDomResources();
 var express = require("express");
 const listenersEmitters = require("./Listeners_Emitters");
 var app = express();
@@ -30,23 +30,23 @@ const { write_file } = require("./lib/write_to_file.js");
   };
 
 
-  const { scripts, styles } = await script_and_style_dependencies.getAllScripts(
-    [
-      "codemirror.theme.files",
-      "codemirror.lib.files",
-      "codemirror.mode.javascript.files",
-      "codemirror.mode.clike.files",
-      "codemirror.addon.selection.files",
-      "codemirror.addon.edit.files",
-      "codemirror.addon.search.files",
-      "codemirror.addon.lint.files",
-      "codemirror.addon.hint.files",
-      "codemirror.addon.dialog.files",
-      "jshint.dist.files",
-      "gridstack.dist.files",
-      "axios.dist.files"
-    ]
-  );
+  // const { scripts, styles } = await script_and_style_dependencies.getAllScripts(
+  //   [
+  //     "codemirror.theme.files",
+  //     "codemirror.lib.files",
+  //     "codemirror.mode.javascript.files",
+  //     "codemirror.mode.clike.files",
+  //     "codemirror.addon.selection.files",
+  //     "codemirror.addon.edit.files",
+  //     "codemirror.addon.search.files",
+  //     "codemirror.addon.lint.files",
+  //     "codemirror.addon.hint.files",
+  //     "codemirror.addon.dialog.files",
+  //     "jshint.dist.files",
+  //     "gridstack.dist.files",
+  //     "axios.dist.files"
+  //   ]
+  // );
 
 
 // <link rel="stylesheet" href="public/styles.css"></link>
